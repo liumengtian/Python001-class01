@@ -14,9 +14,6 @@ def get_url_name(myurl):
     }
 
 # https://maoyan.com/films?showType=3
-# https://maoyan.com/films?showType=3&offset=0
-# https://maoyan.com/films?showType=3&offset=30
-# https://maoyan.com/films?showType=3&offset=60
 # myurl = 'https://maoyan.com/films?showType=3'
 
     response = requests.get(myurl,headers=header)
@@ -29,17 +26,17 @@ def get_url_name(myurl):
             # 获取电影链接
             print('https://maoyan.com' + atag.get('href'))
 
-urls = tuple(f'https://maoyan.com/films?showType=3&offset={(page-1) * 30}' for page in range(1,3))
+# urls = tuple(f'https://maoyan.com/films?showType=3&offset={(page-1) * 30}' for page in range(1,3))
 
-print(urls)
+# print(urls)
 
-from time import sleep
+# from time import sleep
 
-sleep(5)
+# sleep(5)
 
-for page in urls:
-    get_url_name(page)
-    sleep(5)
+# for page in urls:
+#     get_url_name(page)
+#     sleep(5)
 
 
 # print(response)
