@@ -35,9 +35,10 @@ for tags in bs_info.find_all('div', attrs = {'class': 'movie-item-hover'}):
         response = requests.get(url,headers=header)
         # xml化处理
         selector = lxml.etree.HTML(response.text)
-
+        print('--------------selector=============')
+        print(response)
         # 电影名称
-        film_name = selector.xpath('/html/body/div[3]/div/div[2]/div[1]/h1/text()')
+        film_name = selector.xpath('/html/body/div[3]/div/div[2]/div[1]/ul/li[1]/a/text()')
         print(f'电影名称: {film_name}')
 
         # 电影类型
